@@ -1,3 +1,16 @@
+## [1.1.0](https://github.com/AtomiCloud/ester.argon/compare/v1.0.0...v1.1.0) (2024-12-28)
+
+
+### ✨ Features ✨
+
+* secrets integration & email list ([6addbdc](https://github.com/AtomiCloud/ester.argon/commit/6addbdc717a79c11a1a9a66b481ffe9725512f99))
+
+
+### 🐛 Bug Fixes 🐛
+
+* cloudflare pages adapter ([f75fc45](https://github.com/AtomiCloud/ester.argon/commit/f75fc456cc3c264b8c3d38c2536e58ab676f7ad6))
+* cloudflare pages adapter ([c9ff8d6](https://github.com/AtomiCloud/ester.argon/commit/c9ff8d68f4c90f3030edd056623b36a9bf28ae20))
+
 ## 1.0.0 (2024-12-28)
 
 
