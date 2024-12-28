@@ -1,5 +1,6 @@
 ---
 import Nav from "../components/Nav.astro";
+import { Toaster } from "@/components/ui/sonner"
 ---
 <!doctype html>
 <html lang="en">
@@ -15,6 +16,7 @@ import Nav from "../components/Nav.astro";
 	</head>
 	<body>
 		<Nav/>
+		<Toaster client:load/>
 		<slot />
 	</body>
 </html>

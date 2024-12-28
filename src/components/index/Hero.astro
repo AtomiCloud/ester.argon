@@ -7,6 +7,7 @@ import mascot from "../../assets/mascot.png";
 import PulsatingButton from "@/components/ui/pulsating-button";
 import {Button} from "../ui/button"
 import {Input} from "../ui/input"
+import Waitlist from "./Waitlist.astro";
 ---
 
 <div id="container">
@@ -28,8 +29,7 @@ import {Input} from "../ui/input"
                     feel the fun, make the move
                 </div>
                 <div class="w-full flex flex-col text-sm justify-center gap-4 center">
-                    <Input className="text-center text-md" type="email" placeholder="Email"/>
-                    <PulsatingButton className="text-md">Reserve your Spot</PulsatingButton>
+                    <Waitlist/>
                 </div>
             </div>
         </div>

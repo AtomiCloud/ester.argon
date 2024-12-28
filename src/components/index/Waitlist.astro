@@ -1,0 +1,90 @@
+---
+import PulsatingButton from "../ui/pulsating-button";
+import {Input} from "../ui/input";
+---
+
+<div class="flex flex-col gap-2">
+    <Input id="email" className="text-center text-md" type="email" placeholder="Enter your email"/>
+    <p id="error" class="text-xs text-red-500 text-center py-0"></p>
+</div>
+<PulsatingButton id="reserve" className="text-md">Reserve your Spot</PulsatingButton>
+<script>
+    import z from "zod";
+    import {actions} from 'astro:actions';
+    import {toast} from "sonner";
+    import confetti from "canvas-confetti";
+
+    const fireworksClick = () => {
+        const duration = 2500;
+        const animationEnd = Date.now() + duration;
+        const defaults = {startVelocity: 30, spread: 360, ticks: 60, zIndex: 0};
+
+        const randomInRange = (min: number, max: number) =>
+            Math.random() * (max - min) + min;
+
+        const interval = window.setInterval(() => {
+            const timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            const particleCount = 50 * (timeLeft / duration);
+            confetti({
+                ...defaults,
+                particleCount,
+                origin: {x: randomInRange(0.1, 0.3), y: Math.random() - 0.2},
+            });
+            confetti({
+                ...defaults,
+                particleCount,
+                origin: {x: randomInRange(0.7, 0.9), y: Math.random() - 0.2},
+            });
+        }, 250);
+    }
+
+    const join = document.getElementById('reserve');
+    const emailInput = document.getElementById('email');
+    const errorBox = document.getElementById('error');
+
+    function emailValidator(email: string): string[] {
+
+        const result = z.string().email('Invalid email').safeParse(email);
+        if (result.success) return [];
+        return result.error.errors.map(x => x.message);
+    }
+
+    emailInput?.addEventListener('input', async () => {
+        const email = emailInput?.value ?? "";
+        const errors = emailValidator(email);
+        if (errors.length > 0) {
+            emailInput?.classList.add('border-red-500');
+            emailInput?.classList.add('focus:outline-red-500');
+            errorBox!.innerHTML = errors[0];
+        } else {
+            emailInput?.classList.remove('border-red-500');
+            emailInput?.classList.remove('focus:outline-red-500');
+            errorBox!.innerHTML = '';
+        }
+    });
+
+    join?.addEventListener('click', async () => {
+
+        const email = emailInput?.value ?? "";
+        const errors = emailValidator(email)
+        if (errors.length > 0) {
+            toast.error(errors[0]);
+            return;
+        }
+        const {error} = await actions.submitWaitlistEmail({email});
+        emailInput!.value = '';
+        if (!error) {
+            fireworksClick();
+            toast.success('You have been added to the waitlist  🎉');
+        } else {
+            errorBox!.innerHTML = error;
+            toast.error('Something went wrong while adding you to the waitlist 😢');
+        }
+
+    });
+</script>

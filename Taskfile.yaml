@@ -5,6 +5,7 @@ tasks:
     desc: Setup the project for development
     cmds:
       - bun install
+      - ./scripts/local/secrets.sh
   build:
     desc: Build the project
     cmds:

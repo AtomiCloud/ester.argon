@@ -8,7 +8,6 @@ let
         inherit
           mirrord
           swagger_typescript_api
-          infisical
           sg
           pls;
       }
@@ -18,6 +17,7 @@ let
       {
         helm = kubernetes-helm;
         inherit
+          infisical
           coreutils
           yq-go
           gnused
