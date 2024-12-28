@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/AtomiCloud/ester.argon/compare/v1.1.3...v1.1.4) (2024-12-28)
+
+
+### 🐛 Bug Fixes 🐛
+
+* incorrect secret access ([588b1e2](https://github.com/AtomiCloud/ester.argon/commit/588b1e283e4de0a18ab6fa7c88677cfffff987c3))
+
 ## [1.1.3](https://github.com/AtomiCloud/ester.argon/compare/v1.1.2...v1.1.3) (2024-12-28)
 
 
