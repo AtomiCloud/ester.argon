@@ -1,5 +1,6 @@
 import { defineAction, ActionError } from 'astro:actions';
 import { z } from 'astro:schema';
+const { env } = Astro.locals.runtime;
 
 export const server = {
   submitWaitlistEmail: defineAction({
@@ -12,7 +13,7 @@ export const server = {
         headers: {
           accept: 'application/json',
           'content-type': 'application/json',
-          'api-key': import.meta.env.BREVO_API_KEY,
+          'api-key': env.BREVO_API_KEY,
         },
         body: JSON.stringify({
           email,
