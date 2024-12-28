@@ -43,9 +43,9 @@ import {Input} from "../ui/input";
         }, 250);
     }
 
-    const join = document.getElementById('reserve');
-    const emailInput = document.getElementById('email');
-    const errorBox = document.getElementById('error');
+    const join = document.getElementById('reserve') as HTMLButtonElement;
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const errorBox = document.getElementById('error') as HTMLDivElement;
 
     function emailValidator(email: string): string[] {
 
@@ -82,7 +82,7 @@ import {Input} from "../ui/input";
             fireworksClick();
             toast.success('You have been added to the waitlist  🎉');
         } else {
-            errorBox!.innerHTML = error;
+            errorBox.innerHTML = error.message;
             toast.error('Something went wrong while adding you to the waitlist 😢');
         }
 

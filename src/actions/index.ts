@@ -20,15 +20,15 @@ export const server = {
         }),
       };
 
-      // const r = await fetch('https://api.brevo.com/v3/contacts', options);
+      const r = await fetch('https://api.brevo.com/v3/contacts', options);
 
-      // if (!r.ok) {
-      //   console.error(r);
-      //   throw new ActionError({
-      //     message: 'Something went wrong while adding you to the waitlist 😢',
-      //     statusCode: 500,
-      //   });
-      // }
+      if (!r.ok) {
+        console.error(r);
+        throw new ActionError({
+          message: 'Something went wrong while adding you to the waitlist 😢',
+          statusCode: 'INTERNAL_SERVER_ERROR',
+        });
+      }
       return email;
     },
   }),
