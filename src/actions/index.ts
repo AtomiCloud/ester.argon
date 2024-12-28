@@ -24,7 +24,9 @@ export const server = {
 
       if (!r.ok) {
         console.log(import.meta.env.BREVO_API_KEY);
-        console.error(JSON.stringify(r));
+        console.error(r.statusText);
+        console.error(r.status);
+        console.error(r.url);
         throw new ActionError({
           message: 'Something went wrong while adding you to the waitlist 😢',
           statusCode: 'INTERNAL_SERVER_ERROR',
