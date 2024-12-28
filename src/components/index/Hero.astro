@@ -2,35 +2,76 @@
 import astroLogo from '../../assets/astro.svg';
 import background from '../../assets/background.svg';
 import logo from '../../assets/light_full_logo.svg';
+import cloud from '../../assets/cloud.svg';
 import mascot from "../../assets/mascot.png";
 import splash from "../../assets/splash.svg";
+import PulsatingButton from "@/components/ui/pulsating-button";
 import {Button} from "../ui/button"
 import {Input} from "../ui/input"
 ---
 
 <div id="container">
     <main class="gap-24">
-        <div class="flex flex-wrap items-center justify-center gap-12 w-[1000px]">
-            <div class="w-1/2 flex items-center justify-center" style="position: relative;">
-                <img style="position: absolute; z-index: 0" class="w-full" src={splash.src} alt="splash"/>
+        <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-12 max-w-[1000px]">
+            <div class="w-2/3 md:w-1/2 flex items-center justify-center" style="position: relative;">
+                <img class="w-11/12 right-cloud" src={cloud.src} alt="cloud1"/>
+                <img class="w-11/12 left-cloud" src={cloud.src} alt="cloud2"/>
                 <img style="z-index: 1" src={mascot.src} alt="mascot" class="object-contain"/>
             </div>
-            <div class="w-2/5 flex flex-col justify-center items-center gap-8">
-                <div class="text-sm  text-center bg-[#FFF4DC] text-pink-600 py-2 px-8 header">WORKOUTS ARE FINALLY FUN</div>
+            <div class="w-2/3 md:w-2/5 flex flex-col justify-center items-center gap-4 md:gap-8">
+                <div class="text-xs md:text-sm  text-center bg-[#FFF4DC] text-pink-600 py-2 px-8 header rounded-lg">
+                    JOIN THE KKOMMUNITY
+                </div>
                 <div class="w-full">
                     <img src={logo.src} alt="logo"/>
                 </div>
-                <div class="text-xl font-light text-light text-sky-800"> We make you want to move move</div>
+                <div class="slogan text-lg md:text-xl font-light text-justify text-light text-sky-800">
+                    feel the fun, make the move
+                </div>
+                <div class="w-full flex flex-col text-sm justify-center gap-4 center">
+                    <Input className="text-center text-md" type="email" placeholder="Email"/>
+                    <PulsatingButton className="text-md">Reserve your Spot</PulsatingButton>
+                </div>
             </div>
         </div>
-        <div class="w-[450px] flex flex-col text-sm justify-center gap-4 center">
-            <Input className="text-xl text-center" type="email" placeholder="Email"/>
-            <Button className="bg-sky-800">Join the Waitlist</Button>
-        </div>
+
     </main>
 </div>
 
 <style>
+
+    @keyframes moveLeftRight {
+        0% {
+            transform: translateX(20px);
+        }
+        50% {
+            transform: translateX(-20px); /* Move to the right */
+        }
+        100% {
+            transform: translateX(20px); /* Move back to the original position */
+        }
+    }
+
+    .right-cloud {
+        position: absolute;
+        z-index: 0;
+        top: -9%;
+        left: 15%;
+        animation: moveLeftRight 4.5s infinite ease-in-out;
+    }
+
+
+    .left-cloud {
+        position: absolute;
+        z-index: 0;
+        top: -28%;
+        left:-30%;
+        animation: moveLeftRight 5s infinite ease-in-out;
+    }
+
+    .slogan {
+        font-family: 'Poppins', sans-serif;
+    }
 
     .header {
         font-family: 'DM Sans', sans-serif;
@@ -44,10 +85,9 @@ import {Input} from "../ui/input"
     }
 
     main {
-        height: 100vh;
+        height: calc( 100vh - 6rem - 2px );
         display: flex;
         flex-direction: column;
-        //background: #FFF4DC;
         margin: auto;
         align-items: center;
         justify-content: center;
