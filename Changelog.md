@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/AtomiCloud/ester.argon/compare/v1.1.2...v1.1.3) (2024-12-28)
+
+
+### 🐛 Bug Fixes 🐛
+
+* more logs ([1412364](https://github.com/AtomiCloud/ester.argon/commit/1412364afa7bd817e0f867db13ff03dda6279753))
+
 ## [1.1.2](https://github.com/AtomiCloud/ester.argon/compare/v1.1.1...v1.1.2) (2024-12-28)
 
 
