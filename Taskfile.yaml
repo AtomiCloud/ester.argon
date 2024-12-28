@@ -5,6 +5,10 @@ tasks:
     desc: Setup the project for development
     cmds:
       - bun install
+  build:
+    desc: Build the project
+    cmds:
+      - bunx --bun astro build
   dev:
     desc: Run the development server
     cmds:
