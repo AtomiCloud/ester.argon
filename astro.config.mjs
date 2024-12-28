@@ -7,6 +7,7 @@ import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
+  output: 'server',
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -14,7 +15,9 @@ export default defineConfig({
     react(),
   ],
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'cloudflare',
+  }),
   vite: {
     resolve: {
       // Use react-dom/server.edge instead of react-dom/server.browser for React 19.
