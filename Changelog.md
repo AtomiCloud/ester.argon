@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/AtomiCloud/ester.argon/compare/v1.1.1...v1.1.2) (2024-12-28)
+
+
+### 🐛 Bug Fixes 🐛
+
+* cloudflare pages adapter fix ([50de4ec](https://github.com/AtomiCloud/ester.argon/commit/50de4ec21faa44d6cd60930f6b7ed720db7692a7))
+* logs & ci ([a5cb0f8](https://github.com/AtomiCloud/ester.argon/commit/a5cb0f82e1104e9d7478f443b4ab4bfe5bf49b50))
+
 ## [1.1.1](https://github.com/AtomiCloud/ester.argon/compare/v1.1.0...v1.1.1) (2024-12-28)
 
 
