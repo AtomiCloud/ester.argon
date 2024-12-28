@@ -1,0 +1,62 @@
+---
+import astroLogo from '../../assets/astro.svg';
+import background from '../../assets/background.svg';
+import logo from '../../assets/light_full_logo.svg';
+import mascot from "../../assets/mascot.png";
+import {Button} from "../ui/button"
+import {Input} from "../ui/input"
+---
+
+<div id="container">
+    <main class="gap-24">
+        <div class="flex flex-wrap items-center justify-center gap-12 w-[1000px]">
+            <div class="w-2/5 flex items-center justify-center">
+                <img src={mascot.src} alt="mascot" class="object-contain"/>
+            </div>
+            <div class="w-1/2 flex flex-col items-center justify-center gap-8">
+                <div class="text-sm  text-center bg-white text-pink-600 py-2 px-8 header">WORKOUTS ARE FINALLY FUN</div>
+                <div class="w-full">
+                    <img src={logo.src} alt="logo"/>
+                </div>
+                <div class="text-xl font-light text-light text-sky-800"> We make you want to move more</div>
+            </div>
+        </div>
+        <div class="w-[450px] flex flex-col text-sm justify-center gap-4 center">
+            <Input className="text-xl text-center" type="email" placeholder="Email"/>
+            <Button className="bg-sky-800">Join the Waitlist</Button>
+        </div>
+    </main>
+</div>
+
+<style>
+
+    .header {
+        font-family: 'DM Sans', sans-serif;
+        letter-spacing: 0.2em;
+        font-weight: bold;
+    }
+
+    #container {
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        height: 100%;
+    }
+
+    main {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        //background: #FFF4DC;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-top: 0.25em;
+    }
+
+
+
+</style>
