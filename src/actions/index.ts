@@ -23,7 +23,8 @@ export const server = {
       const r = await fetch('https://api.brevo.com/v3/contacts', options);
 
       if (!r.ok) {
-        console.error(r);
+        console.log(import.meta.env.BREVO_API_KEY);
+        console.error(JSON.stringify(r));
         throw new ActionError({
           message: 'Something went wrong while adding you to the waitlist 😢',
           statusCode: 'INTERNAL_SERVER_ERROR',

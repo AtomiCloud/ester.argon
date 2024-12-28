@@ -9,7 +9,7 @@ pre-commit-lib.run {
       enable = true;
       excludes = [
         ".*node_modules.*"
-        ".*(Changelog|README).+(MD|md)"
+        ".*(Changelog|README|CommitConventions).+(MD|md)"
       ];
     };
 
