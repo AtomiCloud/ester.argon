@@ -1,3 +1,25 @@
+## [1.2.0](https://github.com/AtomiCloud/ester.argon/compare/v1.1.7...v1.2.0) (2024-12-29)
+
+
+### ✨ Features ✨
+
+* bg-2 ([2641590](https://github.com/AtomiCloud/ester.argon/commit/2641590e95b0428519e0a4ec40756d8d51813a78))
+* bg-3 ([0dfaabc](https://github.com/AtomiCloud/ester.argon/commit/0dfaabc46ed84d9fbd80ee9307bba580d1dcbb35))
+* bg-3 w mobile ([f1beafc](https://github.com/AtomiCloud/ester.argon/commit/f1beafc4066b94b562dfe7632e8a8401adfeb4b2))
+* bg1 test ([87a3746](https://github.com/AtomiCloud/ester.argon/commit/87a37461cc8a92f2ca10c7008de1348f23c4c261))
+* drop ([c7a47c5](https://github.com/AtomiCloud/ester.argon/commit/c7a47c5319798f7ddc8f6be0ee1361fb4d4851aa))
+
+
+### 🐛 Bug Fixes 🐛
+
+* drop in mobile ([4c7da38](https://github.com/AtomiCloud/ester.argon/commit/4c7da386baa4a9b4e2c39b4678e453de52a69ba1))
+* iphone compat ([be44407](https://github.com/AtomiCloud/ester.argon/commit/be44407e81a783f471d4a36a431c246799c21128))
+* mobile compat ([522b8c3](https://github.com/AtomiCloud/ester.argon/commit/522b8c390c4bc55ae96f82fc3dd5107dc553d510))
+* mobile compat ([74f9699](https://github.com/AtomiCloud/ester.argon/commit/74f96997b6146055f4f5808ff880fcc8fbc1eaec))
+* usage of correct scale factor ([e605a72](https://github.com/AtomiCloud/ester.argon/commit/e605a72f80b40a65f0a1231d9ac5b5e92c537c0c))
+* vertical adjustments ([99b593b](https://github.com/AtomiCloud/ester.argon/commit/99b593b12c99714c5d16b842fce772b40489721a))
+* without blob ([a7c3ded](https://github.com/AtomiCloud/ester.argon/commit/a7c3dedbf2cb92b45601a7a6365106e8ba78f4ff))
+
 ## [1.1.7](https://github.com/AtomiCloud/ester.argon/compare/v1.1.6...v1.1.7) (2024-12-29)
 
 
