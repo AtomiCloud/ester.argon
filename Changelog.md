@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/AtomiCloud/ester.argon/compare/v1.2.2...v1.2.3) (2024-12-29)
+
+
+### 🐛 Bug Fixes 🐛
+
+* incorrect css class for bg ([f76c231](https://github.com/AtomiCloud/ester.argon/commit/f76c23107e3b6e021bc998caa2989534fd094ed0))
+
 ## [1.2.2](https://github.com/AtomiCloud/ester.argon/compare/v1.2.1...v1.2.2) (2024-12-29)
 
 
