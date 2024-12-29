@@ -1,11 +1,14 @@
 ---
 import astroLogo from '../../assets/astro.svg';
-import logo from '../../assets/light_full_logo.svg';
+import logo from '../../assets/dark_full_logo.svg';
 import cloud from '../../assets/cloud.svg';
 import mascot from "../../assets/mascot.png";
 import Waitlist from "./Waitlist.astro";
+import Nav from "../Nav.astro";
+import Background from "./Background.astro";
 ---
 
+<Background/>
 <div id="container">
     <main>
         <div class="absolute flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-28 max-w-[1200px]">
@@ -91,6 +94,19 @@ import Waitlist from "./Waitlist.astro";
     h1 {
         font-size: 22px;
         margin-top: 0.25em;
+    }
+
+    @keyframes animate {
+        0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+        100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
     }
 
 
