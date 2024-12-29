@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/AtomiCloud/ester.argon/compare/v1.2.0...v1.2.1) (2024-12-29)
+
+
+### 🐛 Bug Fixes 🐛
+
+* remove unused imports ([55c85ab](https://github.com/AtomiCloud/ester.argon/commit/55c85abd2402bfbe4a76c9e27031a7774f35ffea))
+
 ## [1.2.0](https://github.com/AtomiCloud/ester.argon/compare/v1.1.7...v1.2.0) (2024-12-29)
 
 
