@@ -22,18 +22,44 @@ export const server = {
           listIds: [5],
         }),
       };
-
-      const r = await fetch('https://api.brevo.com/v3/contacts', options);
-
-      if (!r.ok) {
-        console.error(r.statusText);
-        console.error(r.status);
-        console.error(r.url);
+      let r;
+      try {
+        r = await fetch('https://api.brevo.com/v3/contacts', options);
+      } catch (error) {
+        console.error('caught error', error);
         throw new ActionError({
           message: 'Something went wrong while adding you to the waitlist 😢',
-          statusCode: 'INTERNAL_SERVER_ERROR',
+          code: 'INTERNAL_SERVER_ERROR',
         });
       }
+
+      const body = await r.text();
+      if (!r.ok) {
+        // Check if the response is a JSON object
+        let response;
+        try {
+          response = JSON.parse(body);
+        } catch (error) {
+          console.error('caught error', error);
+          throw new ActionError({
+            message: 'Something went wrong while adding you to the waitlist 😢',
+            code: 'BAD_REQUEST',
+          });
+        }
+        console.error(response);
+        if (response.code && response.code == 'duplicate_parameter') {
+          throw new ActionError({
+            message: 'You are already on the waitlist!',
+            code: 'CONFLICT',
+          });
+        } else {
+          throw new ActionError({
+            message: 'Something went wrong while adding you to the waitlist 😢',
+            code: 'BAD_REQUEST',
+          });
+        }
+      }
+      console.log('Success', r.ok);
       return email;
     },
   }),

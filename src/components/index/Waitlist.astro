@@ -1,13 +1,19 @@
 ---
 import PulsatingButton from "../ui/pulsating-button";
 import {Input} from "../ui/input";
+import { Icon } from 'astro-icon/components'
 ---
 
 <div class="flex flex-col gap-2">
     <Input id="email" className="text-center text-md" type="email" placeholder="Enter your email"/>
     <p id="error" class="text-xs text-red-500 text-center py-0"></p>
 </div>
-<PulsatingButton id="reserve" className="text-md">Reserve your Spot</PulsatingButton>
+<PulsatingButton id="reserve" >
+    <div class="text-md flex justify-center items-center gap-4">
+        <Icon name="mdi:loading" class="text-lg hidden animate-spin"/>
+        Reserve your Spot
+    </div>
+</PulsatingButton>
 <script>
     import z from "zod";
     import {actions} from 'astro:actions';
@@ -46,6 +52,7 @@ import {Input} from "../ui/input";
     const join = document.getElementById('reserve') as HTMLButtonElement;
     const emailInput = document.getElementById('email') as HTMLInputElement;
     const errorBox = document.getElementById('error') as HTMLDivElement;
+    const loader = document.querySelector('#reserve svg.animate-spin') as HTMLDivElement;
 
     function emailValidator(email: string): string[] {
 
@@ -76,15 +83,25 @@ import {Input} from "../ui/input";
             toast.error(errors[0]);
             return;
         }
-        const {error} = await actions.submitWaitlistEmail({email});
-        emailInput!.value = '';
-        if (!error) {
-            fireworksClick();
-            toast.success('You have been added to the waitlist  🎉');
-        } else {
+        loader.classList.remove('hidden');
+        try {
+            const {error} = await actions.submitWaitlistEmail({email});
+            emailInput!.value = '';
+            if (!error) {
+                fireworksClick();
+                toast.success('You have been added to the waitlist  🎉');
+            } else {
+                errorBox.innerHTML = error.message;
+                toast.error(error.message);
+            }
+            loader.classList.add('hidden');
+        } catch (error) {
+            loader.classList.add('hidden');
+            console.error("caught error",error);
             errorBox.innerHTML = error.message;
             toast.error('Something went wrong while adding you to the waitlist 😢');
         }
+
 
     });
 </script>

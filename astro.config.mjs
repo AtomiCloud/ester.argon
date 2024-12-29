@@ -6,6 +6,8 @@ import react from '@astrojs/react';
 
 import cloudflare from '@astrojs/cloudflare';
 
+import icon from 'astro-icon';
+
 export default defineConfig({
   env: {
     schema: {
@@ -18,6 +20,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     react(),
+    icon(),
   ],
 
   adapter: cloudflare({
