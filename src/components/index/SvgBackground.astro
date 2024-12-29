@@ -3,13 +3,13 @@ import background from '../../assets/bg-2.svg';
 import webBackground from '../../assets/bg-web.svg';
 ---
 
-<div class="background absolute top-0 z-0 h-[60vh] md:h-[100vh]">
+<div class="bg absolute top-0 z-0 h-[60vh] md:h-[100vh]">
     <img src={background.src} alt="background" class="w-full h-full object-cover block md:hidden"/>
     <img src={webBackground.src} alt="background" class="w-full h-full object-cover hidden md:block"/>
 </div>
 
 <style>
-    .background {
+    .bg {
         width: 100vw;
         z-index: -1;
         overflow: hidden;
