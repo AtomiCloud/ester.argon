@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/AtomiCloud/ester.argon/compare/v1.2.1...v1.2.2) (2024-12-29)
+
+
+### 🐛 Bug Fixes 🐛
+
+* missing div start ([4dcc64a](https://github.com/AtomiCloud/ester.argon/commit/4dcc64ab6f2007194e6f2fd2e520840754458645))
+
 ## [1.2.1](https://github.com/AtomiCloud/ester.argon/compare/v1.2.0...v1.2.1) (2024-12-29)
 
 
