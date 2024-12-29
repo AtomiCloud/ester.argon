@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/AtomiCloud/ester.argon/compare/v1.1.6...v1.1.7) (2024-12-29)
+
+
+### 🐛 Bug Fixes 🐛
+
+* sonner delay to be shorter ([0735211](https://github.com/AtomiCloud/ester.argon/commit/0735211cbe6b109a88fe571d2b2b58c7ff53b103))
+
 ## [1.1.6](https://github.com/AtomiCloud/ester.argon/compare/v1.1.5...v1.1.6) (2024-12-29)
 
 
