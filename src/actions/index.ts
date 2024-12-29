@@ -1,6 +1,6 @@
 import { defineAction, ActionError } from 'astro:actions';
 import { z } from 'astro:schema';
-const { env } = Astro.locals.runtime;
+import { getSecret } from 'astro:env/server';
 
 export const server = {
   submitWaitlistEmail: defineAction({
@@ -8,12 +8,14 @@ export const server = {
       email: z.string().email(),
     }),
     handler: async ({ email }) => {
+      const apiKey = getSecret('BREVO_API_KEY');
+
       const options = {
         method: 'POST',
         headers: {
           accept: 'application/json',
           'content-type': 'application/json',
-          'api-key': env.BREVO_API_KEY,
+          'api-key': apiKey,
         },
         body: JSON.stringify({
           email,
@@ -24,7 +26,6 @@ export const server = {
       const r = await fetch('https://api.brevo.com/v3/contacts', options);
 
       if (!r.ok) {
-        console.log(import.meta.env.BREVO_API_KEY);
         console.error(r.statusText);
         console.error(r.status);
         console.error(r.url);

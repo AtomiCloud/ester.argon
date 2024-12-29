@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 import react from '@astrojs/react';
@@ -7,6 +7,11 @@ import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
+  env: {
+    schema: {
+      BREVO_API_KEY: envField.string({ context: 'server', access: 'secret', optional: false }),
+    },
+  },
   output: 'server',
   integrations: [
     tailwind({
