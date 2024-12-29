@@ -89,17 +89,23 @@ import { Icon } from 'astro-icon/components'
             emailInput!.value = '';
             if (!error) {
                 fireworksClick();
-                toast.success('You have been added to the waitlist  🎉');
+                toast.success('You have been added to the waitlist  🎉', {
+                    duration: 2000,
+                });
             } else {
                 errorBox.innerHTML = error.message;
-                toast.error(error.message);
+                toast.error(error.message, {
+                    duration: 2000,
+                });
             }
             loader.classList.add('hidden');
         } catch (error) {
             loader.classList.add('hidden');
             console.error("caught error",error);
             errorBox.innerHTML = error.message;
-            toast.error('Something went wrong while adding you to the waitlist 😢');
+            toast.error('Something went wrong while adding you to the waitlist 😢', {
+                duration: 2000,
+            });
         }
 
 
