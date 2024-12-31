@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/AtomiCloud/ester.argon/compare/v1.2.3...v1.2.4) (2024-12-31)
+
+
+### 🐛 Bug Fixes 🐛
+
+* update bun lock ([1deaec2](https://github.com/AtomiCloud/ester.argon/commit/1deaec224f2d4716b61159eee8e0df7b5278559f))
+
 ## [1.2.3](https://github.com/AtomiCloud/ester.argon/compare/v1.2.2...v1.2.3) (2024-12-29)
 
 
