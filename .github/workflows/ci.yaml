@@ -46,7 +46,7 @@ jobs:
     steps:
       # Setup
       - uses: AtomiCloud/actions.setup-nix@v1.1.0
-      - uses: AtomiCloud/actions.cache-npm@v1.0.1
+      - uses: AtomiCloud/actions.cache-npm@v1.1.0
 
       # Action
       - name: Release
